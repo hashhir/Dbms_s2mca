@@ -1,0 +1,58 @@
+connect system
+SQL> connect system
+Enter password:manager
+Connected.
+
+SQL> create table std(rollno int,name varchar(20),course varchar(20),year int);
+
+Table created.
+
+
+SQL> insert into std VALUES(1,'Abi','MCA',2021);
+
+1 row created.
+
+SQL> insert into std VALUES(2,'Abirami','MCA',2022);
+
+1 row created.
+
+SQL> insert into std VALUES(3,'Biby','MCA',2020);
+
+1 row created.
+
+SQL> insert into std VALUES(4,'ciyona','MCA',2020);
+
+1 row created.
+
+SQL> insert into std VALUES(5,'diya','MCA',2020);
+
+1 row created.
+
+
+SQL> alter table std ADD PRIMARY KEY(rollno);
+
+Table altered.
+
+SQL> select * from std;
+
+    ROLLNO NAME                 COURSE                     YEAR
+---------- -------------------- -------------------- ----------
+         1 Abi                                  MCA                        2021
+         2 Abirami                            MCA                        2022
+         3 Biby                                   MCA                        2020
+         4 ciyona                                MCA                        2020
+         5 diya                                     MCA                        2020
+
+SQL> truncate table std;
+
+Table truncated.
+
+SQL> select * from std;
+
+no rows selected
+
+SQL> drop table std;
+
+Table dropped.
+
+SQL>

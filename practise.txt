@@ -1,0 +1,389 @@
+1.Suppose that a faculty wants to keep records about the students, the desired records should
+maintain this information about each student: (Roll No, Full name, CGPA, Age, and
+Gender)
+a. Create the appropriate Table.
+b. Write SQL Queries to answer the following problems:
+-List the names of all female students.
+-What is the age of the youngest male student?
+- List the name and the CGPA for all students who got above 6.5 CGPA ordered by
+their CGPAs then their names.
+-What is the Topper name?
+
+
+
+SQL> connect system
+Enter password:
+Connected.
+
+
+
+SQL> create table student(rollno int,fullname varchar(20),cgpa int,age int,gende
+r varchar(10));
+
+Table created.
+
+SQL> insert into student values(1,'hashir',5,22,'male');
+
+1 row created.
+
+SQL> insert into student values(2,'jubitha',6,21,'female');
+
+1 row created.
+
+SQL> insert into student values(3,'joel',7,22,'male');
+
+1 row created.
+
+SQL> insert into student values(4,'muhsina',8,20,'female');
+
+1 row created.
+
+SQL> insert into student values(5,'jacop',9,20,'male');
+
+1 row created.
+
+SQL> select * from student;
+
+    ROLLNO FULLNAME                   CGPA        AGE GENDER
+---------- -------------------- ---------- ---------- ----------
+         1 hashir                        5         22 male
+         2 jubitha                       6         21 female
+         3 joel                          7         22 male
+         4 muhsina                       8         20 female
+         5 jacop                         9         20 male
+
+SQL> select * from student where gender='female';
+
+    ROLLNO FULLNAME                   CGPA        AGE GENDER
+---------- -------------------- ---------- ---------- ----------
+         2 jubitha                       6         21 female
+         4 muhsina                       8         20 female
+
+SQL> select min(age) from student where gender='male';
+
+  MIN(AGE)
+----------
+        20
+
+
+
+SQL> SELECT fullname from student where cgpa > 6.5 order by fullname;
+
+FULLNAME
+--------------------
+jacop
+joel
+muhsina
+
+
+
+
+SQL> select fullname from student where cgpa in (select max(cgpa) from student);
+
+
+  2  create table student(rollno int,fullname varchar(20),cgpa int,age int,gende
+r varchar(10));
+create table student(rollno int,fullname varchar(20),cgpa int,age int,gender var
+char(10);)
+
+        *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> create table student(rollno int,fullname varchar(20),cgpa int,age int,gende
+r varchar(10));
+create table student(rollno int,fullname varchar(20),cgpa int,age int,gender var
+char(10))
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> drop table student;
+
+Table dropped.
+
+SQL> create table student(rollno int,fullname varchar(20),cgpa int,age int,gende
+r varchar(10));
+
+Table created.
+
+SQL> insert into students values(1,'hashir',5,22,'male');
+insert into students values(1,'hashir',5,22,'male')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> insert into student values(1,'hashir',5,22,'male');
+
+1 row created.
+
+SQL> insert into student values(2,'jubitha',6,21,'female');
+
+1 row created.
+
+SQL> insert into student values(3,'joel',7,22,'male');
+
+1 row created.
+
+SQL> insert into student values(4,'muhsina',8,20,'female');
+
+1 row created.
+
+SQL> insert into student values(5,'jacop',9,20,'male');
+
+1 row created.
+
+SQL> select * from student;
+
+    ROLLNO FULLNAME                   CGPA        AGE GENDER
+---------- -------------------- ---------- ---------- ----------
+         1 hashir                        5         22 male
+         2 jubitha                       6         21 female
+         3 joel                          7         22 male
+         4 muhsina                       8         20 female
+         5 jacop                         9         20 male
+
+SQL> select * from student where gender='female';
+
+    ROLLNO FULLNAME                   CGPA        AGE GENDER
+---------- -------------------- ---------- ---------- ----------
+         2 jubitha                       6         21 female
+         4 muhsina                       8         20 female
+
+SQL> select min(age) from student where gender='male';
+
+  MIN(AGE)
+----------
+        20
+
+SQL> SELECT column_name(s)
+  2  FROM table_name
+  3  WHERE column_name BETWEEN value1 AND value2;
+FROM table_name
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT fullname from student where cgpa > 6.5 order by fullname;
+
+FULLNAME
+--------------------
+jacop
+joel
+muhsina
+
+SQL> select fullname from student where fullname in (select max(cgpa) from stude
+nt);
+select fullname from student where fullname in (select max(cgpa) from student)
+                                   *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> select fullname from student where cgpa in (select max(cgpa) from student);
+
+
+FULLNAME
+--------------------
+jacop
+
+SQL> create table items(itemid int primary key,itemname varchar(20),itemprice in
+t,expiry int,quantity int);
+
+Table created.
+
+SQL> insert into items values(1,'oreo',30,2022,12);
+
+1 row created.
+
+SQL> insert into items values(2,'dark fantasy',50,2025,15);
+
+1 row created.
+
+SQL> insert into items values(3,'kit kat',100,2030,50);
+
+1 row created.
+
+SQL> insert into items values(4,'snickers',100,2031,60);
+
+1 row created.
+
+SQL> select itemname,itemprice from items where quantity > 20;
+
+ITEMNAME              ITEMPRICE
+-------------------- ----------
+kit kat                     100
+snickers                    100
+
+SQL> insert into items values(5,'kinder joy',100,2019,10);
+
+1 row created.
+
+SQL> select itemname from items where expiry < 2022;
+
+ITEMNAME
+--------------------
+kinder joy
+
+SQL> select itemname,itemprice from items order by itemprice desc limit 1 offset
+4;
+select itemname,itemprice from items order by itemprice desc limit 1 offset4
+                                                             *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select itemname,itemprice from items order by itemprice limit 2;
+select itemname,itemprice from items order by itemprice limit 2
+                                                        *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select itemname,itemprice from items order by itemprice;
+
+ITEMNAME              ITEMPRICE
+-------------------- ----------
+oreo                         30
+dark fantasy                 50
+snickers                    100
+kinder joy                  100
+kit kat                     100
+
+SQL> select itemname,itemprice from items order by itemprice desc;
+
+ITEMNAME              ITEMPRICE
+-------------------- ----------
+kit kat                     100
+snickers                    100
+kinder joy                  100
+dark fantasy                 50
+oreo                         30
+
+SQL> insert into items values(6,'kunder joy',110,2019,10);
+
+1 row created.
+
+SQL> select itemname,itemprice from items order by itemprice;
+
+ITEMNAME              ITEMPRICE
+-------------------- ----------
+oreo                         30
+dark fantasy                 50
+kit kat                     100
+snickers                    100
+kinder joy                  100
+kunder joy                  110
+
+6 rows selected.
+
+SQL> select itemname,itemprice from items order by itemprice desc;
+
+ITEMNAME              ITEMPRICE
+-------------------- ----------
+kunder joy                  110
+kit kat                     100
+kinder joy                  100
+snickers                    100
+dark fantasy                 50
+oreo                         30
+
+6 rows selected.
+
+SQL> select itemname,itemprice from items order by itemprice desc limit 1;
+select itemname,itemprice from items order by itemprice desc limit 1
+                                                             *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select itemname,itemprice from items order by itemprice desc limit(1);
+select itemname,itemprice from items order by itemprice desc limit(1)
+                                                             *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select itemprice from items;
+
+ ITEMPRICE
+----------
+        30
+        50
+       100
+       100
+       100
+       110
+
+6 rows selected.
+
+SQL> select itemprice from items where itemprice not in (select max(itemprice) f
+rom item);
+select itemprice from items where itemprice not in (select max(itemprice) from i
+tem)
+                                                                               *
+
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select itemprice from item where itemprice not in (select max(itemprice) fr
+om item);
+select itemprice from item where itemprice not in (select max(itemprice) from it
+em)
+                      *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select itemprice from items where itemprice not in (select max(itemprice) f
+rom items);
+
+ ITEMPRICE
+----------
+        30
+        50
+       100
+       100
+       100
+
+SQL> select max(itemprice) from items where itemprice not in (select max(itempri
+ce) from items);
+
+MAX(ITEMPRICE)
+--------------
+           100
+
+SQL> select * from items where itemprice in (select max(itemprice) from items wh
+ere itemprice not in (select max(itemprice) from items));
+
+    ITEMID ITEMNAME              ITEMPRICE     EXPIRY   QUANTITY
+---------- -------------------- ---------- ---------- ----------
+         3 kit kat                     100       2030         50
+         4 snickers                    100       2031         60
+         5 kinder joy                  100       2019         10
+
+SQL> select * from items where itemprice in (select max(itemprice) from items wh
+ere itemprice not in (select max(itemprice) from items));
+
+    ITEMID ITEMNAME              ITEMPRICE     EXPIRY   QUANTITY
+---------- -------------------- ---------- ---------- ----------
+         3 kit kat                     100       2030         50
+         4 snickers                    100       2031         60
+         5 kinder joy                  100       2019         10
+
+SQL>ALTER TABLE items ADD CHECK(price<=0);
+
+SQL> Table Altered.
+
+
+
+
+
+
+
+SQL>

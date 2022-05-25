@@ -1,0 +1,153 @@
+
+
+
+SQL> connect
+Enter user-name: system
+Enter password:
+
+
+Connected.
+
+
+SQL> create table employee(id int,fname varchar(20),lname varchar(20),dept varch
+ar(20),loc varchar(20),salary int);
+
+Table created.
+
+SQL> insert into employee values(1,'harshad','kumar','marketing','pune',10000);
+
+1 row created.
+
+SQL> insert into employee values(2,'anurag','rajput','it','mumbai',25000);
+
+1 row created.
+
+SQL> insert into employee values(3,'chaitali','tarle','it','chennai',35000);
+
+1 row created.
+
+SQL> insert into employee values(4,'pramjal','patle','it','chennai',25000);
+
+1 row created.
+
+SQL> insert into employee values(5,'suraj','tripati','marketing','pune',15000);
+
+1 row created.
+
+SQL> insert into employee values(6,'roshini','jadhar','finance','bang',20000);
+
+1 row created.
+
+SQL> insert into employee values(7,'sandhya','jain','finance','bang',20000);
+
+1 row created.
+
+
+
+SQL> select * from employee where dept='it' and loc='chennai';
+
+        ID FNAME                LNAME                DEPT        LOC                      SALARY
+         3 chaitali             tarle                               it
+                                                                                              chennai                   35000
+
+         4 pramjal              patle                             it
+                                                                                                 chennai                   25000
+
+
+
+
+SQL> select * from employee where dept='it' or loc='chennai';
+
+        ID FNAME                LNAME                DEP        LOC                      SALARY
+         2 anurag               rajput                           it
+                                                                                           mumbai                    25000
+
+         3 chaitali             tarle                              it
+                                                                                            chennai                   35000
+
+         4 pramjal              patle                              it
+                                                                                             chennai                   25000
+
+
+
+
+SQL> select fname as empfn, loc as address from employee;
+
+EMPFN                ADDRESS
+-------------------- --------------------
+harshad              pune
+anurag               mumbai
+chaitali             chennai
+pramjal              chennai
+suraj                pune
+roshini              bang
+sandhya              bang
+
+7 rows selected.
+
+
+
+
+
+SQL> select fname from employee where fname like 's%';
+
+FNAME
+--------------------
+suraj
+sandhya
+
+
+
+
+SQL> select sum(salary),loc from employee group by loc;
+
+SUM(SALARY) LOC
+----------- --------------------
+      40000 banglore
+      25000 mumbai
+      60000 chennai
+      25000 pune
+
+
+
+
+SQL> select sum(salary),loc from employee group by loc having sum(salary)>10000;
+
+
+SUM(SALARY) LOC
+----------- --------------------
+      40000 bang
+      25000 mumbai
+      60000 chennai
+      25000 pune
+
+SQL> select * from employee order by fname;
+
+        ID FNAME                LNAME                DEPT          LOC                      SALARY
+-------------------- ----------
+         2 anurag               rajput                             it
+                                                                                               mumbai                    25000
+
+         3 chaitali             tarle                               it
+                                                                                                chennai                   35000
+
+         1 harshad              kumar                marketing
+                                                                                                  pune                      10000
+
+
+         4 pramjal              patle                it
+                                                                                                 chennai                   25000
+
+         6 roshini              jadhar               finance
+                 					bang                      20000
+
+         7 sandhya              jain                 finance
+					bang                      20000
+
+         5 suraj                tripati              marketing
+					pune                      15000
+
+
+7 rows selected.
+
+SQL>

@@ -1,0 +1,247 @@
+
+> db.emp.find({ename:{$regex:"^S"}}).pretty()
+
+
+
+{
+        "_id" : ObjectId("62833c361a11b5607a051030"),
+        "ename" : "Sara",
+        "Department" : "Design",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("628c6abd081631a5fc26d1d4"),
+        "ename" : "ST",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("628c6ce6081631a5fc26d1d5"),
+        "ename" : "ST",
+        "Department" : "Accounts",
+        "salary" : 50000
+}
+
+
+
+> db.emp.find({ename:{$regex:"k$"}}).pretty()
+
+
+{
+        "_id" : ObjectId("628c69dd081631a5fc26d1d3"),
+        "ename" : "bk",
+        "Department" : "Accounts",
+        "salary" : "90000"
+}
+
+
+> db.emp.find({ename: /s/}).pretty()
+
+
+{
+        "_id" : ObjectId("62833c361a11b5607a05102b"),
+        "ename" : "Yaafis",
+        "Department" : "Sales",
+        "salary" : "200000"
+}
+{
+        "_id" : ObjectId("628c664d081631a5fc26d1d2"),
+        "ename" : "saras",
+        "Department" : "Accounts",
+        "salary" : "90000"
+}
+
+
+> db.emp.update( { ename: "MK" },{ $inc: { salary: 8000 }});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+
+> db.emp.find().pretty()
+{
+        "_id" : ObjectId("62833c361a11b5607a05102a"),
+        "ename" : "Jubitha",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102b"),
+        "ename" : "Yaafis",
+        "Department" : "Sales",
+        "salary" : "200000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102c"),
+        "ename" : "Anam",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102d"),
+        "ename" : "Adam",
+        "Department" : "Sales",
+        "salary" : "70000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102e"),
+        "ename" : "Aadi",
+        "Department" : "Accounts",
+        "salary" : "80000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102f"),
+        "ename" : "Haazin",
+        "Department" : "Testing",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051030"),
+        "ename" : "Sara",
+        "Department" : "Design",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051031"),
+        "ename" : "july",
+        "Department" : "Coding",
+        "salary" : "90000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051032"),
+        "ename" : "deena",
+        "Department" : "Accounts",
+        "salary" : "40000"
+}
+{
+        "_id" : ObjectId("628c664d081631a5fc26d1d2"),
+        "ename" : "saras",
+        "Department" : "Accounts",
+        "salary" : "90000"
+}
+{
+        "_id" : ObjectId("628c69dd081631a5fc26d1d3"),
+        "ename" : "bk",
+        "Department" : "Accounts",
+        "salary" : "90000"
+}
+{
+        "_id" : ObjectId("628c6abd081631a5fc26d1d4"),
+        "ename" : "ST",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("628c6ce6081631a5fc26d1d5"),
+        "ename" : "ST",
+        "Department" : "Accounts",
+        "salary" : 50000
+}
+{
+        "_id" : ObjectId("628c6d80081631a5fc26d1d6"),
+        "ename" : "MK",
+        "Department" : "Accounts",
+        "salary" : 8800
+}
+
+
+
+> db.emp.update({ename:"RS"},{$set:{remark:"WC"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+
+> db.emp.find().pretty()
+{
+        "_id" : ObjectId("62833c361a11b5607a05102a"),
+        "ename" : "Jubitha",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102b"),
+        "ename" : "Yaafis",
+        "Department" : "Sales",
+        "salary" : "200000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102c"),
+        "ename" : "Anam",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102d"),
+        "ename" : "Adam",
+        "Department" : "Sales",
+        "salary" : "70000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102e"),
+        "ename" : "Aadi",
+        "Department" : "Accounts",
+        "salary" : "80000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102f"),
+        "ename" : "Haazin",
+        "Department" : "Testing",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051030"),
+        "ename" : "Sara",
+        "Department" : "Design",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051031"),
+        "ename" : "july",
+        "Department" : "Coding",
+        "salary" : "90000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051032"),
+        "ename" : "deena",
+        "Department" : "Accounts",
+        "salary" : "40000"
+}
+{
+        "_id" : ObjectId("628c664d081631a5fc26d1d2"),
+        "ename" : "saras",
+        "Department" : "Accounts",
+        "salary" : "90000"
+}
+{
+        "_id" : ObjectId("628c69dd081631a5fc26d1d3"),
+        "ename" : "bk",
+        "Department" : "Accounts",
+        "salary" : "90000"
+}
+{
+        "_id" : ObjectId("628c6abd081631a5fc26d1d4"),
+        "ename" : "ST",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("628c6ce6081631a5fc26d1d5"),
+        "ename" : "ST",
+        "Department" : "Accounts",
+        "salary" : 50000
+}
+{
+        "_id" : ObjectId("628c6d80081631a5fc26d1d6"),
+        "ename" : "MK",
+        "Department" : "Accounts",
+        "salary" : 8800
+}
+{
+        "_id" : ObjectId("628c7466081631a5fc26d1d7"),
+        "ename" : "RS",
+        "Department" : "Accounts",
+        "salary" : 800,
+        "remark" : "WC"
+}
+
+
+db.emp.update({},{$inc:{salary:4000}},{multi:true})

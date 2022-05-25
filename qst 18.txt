@@ -1,0 +1,210 @@
+
+> use movie
+switched to db movie
+
+
+
+
+
+> db.moviedetails.find().pretty()
+{
+        "_id" : ObjectId("628c57a0186fec347640b48c"),
+        "title" : "Athishayana",
+        "writer" : "Jose",
+        "year" : 2002,
+        "actors" : [
+                "kavya",
+                "jayasurya"
+        ]
+}
+{
+        "_id" : ObjectId("628c57d2186fec347640b48d"),
+        "title" : "Rani",
+        "writer" : "lal",
+        "year" : 2012,
+        "actors" : [
+                "mohanlal",
+                "meera jasmine"
+        ]
+}
+{
+        "_id" : ObjectId("628c580c186fec347640b48e"),
+        "title" : "Shershaah",
+        "writer" : "Saras",
+        "year" : 2015,
+        "actors" : [
+                "sidharth",
+                "kiara"
+        ]
+}
+{
+        "_id" : ObjectId("628c5841186fec347640b48f"),
+        "title" : "Niram",
+        "writer" : "Ram",
+        "year" : 2001,
+        "actors" : [
+                "Kunjakko boban",
+                "Shalini"
+        ]
+}
+{
+        "_id" : ObjectId("628c5891186fec347640b490"),
+        "title" : "Kochi rajavu",
+        "writer" : "Lal",
+        "year" : 2000,
+        "actors" : [
+                "Dileep",
+                "kavya"
+        ]
+}
+{
+        "_id" : ObjectId("628c58e8186fec347640b491"),
+        "title" : "Pandippada",
+        "writer" : "Jose",
+        "year" : 2006,
+        "actors" : [
+                "Dileep",
+                "Navya"
+        ]
+}
+{
+        "_id" : ObjectId("628c5911186fec347640b492"),
+        "title" : "Thilakkam",
+        "writer" : "Antony",
+        "year" : 2001,
+        "actors" : [
+                "Dileep",
+                "kavya"
+        ]
+}
+{
+        "_id" : ObjectId("628c5935186fec347640b493"),
+        "title" : "Mayavi",
+        "writer" : "Antony",
+        "year" : 2005,
+        "actors" : [
+                "Mammotty",
+                "Gopika"
+        ]
+}
+{
+        "_id" : ObjectId("628c5a1e186fec347640b494"),
+        "title" : "Drishyam 2",
+        "writer" : "Jithu joseph",
+        "year" : 2018,
+        "actors" : [
+                "Mohanlal",
+                "Meena"
+        ]
+}
+{
+        "_id" : ObjectId("628c5a4c186fec347640b495"),
+        "title" : "Friends",
+        "writer" : "Lal",
+        "year" : 2000,
+        "actors" : [
+                "Jayaram",
+                "Mukesh"
+        ]
+}
+
+
+
+
+> db.moviedetails.remove({'title':'Friends'})
+WriteResult({ "nRemoved" : 1 })
+
+
+> db.moviedetails.find().pretty()
+{
+        "_id" : ObjectId("628c57a0186fec347640b48c"),
+        "title" : "Athishayana",
+        "writer" : "Jose",
+        "year" : 2002,
+        "actors" : [
+                "kavya",
+                "jayasurya"
+        ]
+}
+{
+        "_id" : ObjectId("628c57d2186fec347640b48d"),
+        "title" : "Rani",
+        "writer" : "lal",
+        "year" : 2012,
+        "actors" : [
+                "mohanlal",
+                "meera jasmine"
+        ]
+}
+{
+        "_id" : ObjectId("628c580c186fec347640b48e"),
+        "title" : "Shershaah",
+        "writer" : "Saras",
+        "year" : 2015,
+        "actors" : [
+                "sidharth",
+                "kiara"
+        ]
+}
+{
+        "_id" : ObjectId("628c5841186fec347640b48f"),
+        "title" : "Niram",
+        "writer" : "Ram",
+        "year" : 2001,
+        "actors" : [
+                "Kunjakko boban",
+                "Shalini"
+        ]
+}
+{
+        "_id" : ObjectId("628c5891186fec347640b490"),
+        "title" : "Kochi rajavu",
+        "writer" : "Lal",
+        "year" : 2000,
+        "actors" : [
+                "Dileep",
+                "kavya"
+        ]
+}
+{
+        "_id" : ObjectId("628c58e8186fec347640b491"),
+        "title" : "Pandippada",
+        "writer" : "Jose",
+        "year" : 2006,
+        "actors" : [
+                "Dileep",
+                "Navya"
+        ]
+}
+{
+        "_id" : ObjectId("628c5911186fec347640b492"),
+        "title" : "Thilakkam",
+        "writer" : "Antony",
+        "year" : 2001,
+        "actors" : [
+                "Dileep",
+                "kavya"
+        ]
+}
+{
+        "_id" : ObjectId("628c5935186fec347640b493"),
+        "title" : "Mayavi",
+        "writer" : "Antony",
+        "year" : 2005,
+        "actors" : [
+                "Mammotty",
+                "Gopika"
+        ]
+}
+{
+        "_id" : ObjectId("628c5a1e186fec347640b494"),
+        "title" : "Drishyam 2",
+        "writer" : "Jithu joseph",
+        "year" : 2018,
+        "actors" : [
+                "Mohanlal",
+                "Meena"
+        ]
+}
+>
+

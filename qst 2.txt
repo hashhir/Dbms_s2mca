@@ -1,0 +1,79 @@
+SQL> create table emply(id int,name varchar(20),dept_id int,salary int);
+
+Table created.
+dept
+SQL> create table dept(dept_id int,dept_name varchar(20),head_dept varchar(20));
+
+Table created.
+
+
+SQL> alter table emply ADD PRIMARY KEY(id);
+
+Table altered.
+
+SQL> alter table dept ADD PRIMARY KEY(dept_id);
+
+Table altered.
+
+SQL> alter table emply ADD FOREIGN KEY(dept_id) REFERENCES dept(dept_id);
+
+Table altered.
+SQL> insert into dept values(1,'EEE','BIJU');
+
+1 row created.
+
+SQL> insert into dept values(2,'CSE','MANU');
+
+1 row created.
+
+SQL> insert into dept values(3,'MCA','SIBU');
+
+1 row created.
+
+SQL> insert into dept values(4,'CIVIL','SONIA');
+
+1 row created.
+
+SQL> insert into dept values(5,'MTECH','ELIZABATH');
+
+1 row created.
+
+SQL> select * from emply;
+
+        ID NAME                    DEPT_ID     SALARY
+---------- -------------------- ---------- ----------
+         1 hashh                         1      25555
+         2 hashir                        2      35555
+         3 hashhir                       3      45555
+         4 muhammed               4      45555
+
+
+
+SQL> insert into emply values(1,'hashh','1',25555);
+
+1 row created.
+
+SQL> insert into emply values(2,'hashir','2',35555);
+
+1 row created.
+
+SQL> insert into emply values(3,'hashhir','3',45555);
+
+1 row created.
+
+SQL> insert into emply values(4,'muhammedhashhir','4',45555);
+
+SQL> select * from dept;
+
+   DEPT_ID DEPT_NAME            HEAD_DEPT
+---------- -------------------- -----------
+         1                EEE                      BIJU
+         2                  CSE                     MANU
+         3                 MCA                     SIBU
+         4                 CIVIL                   SONIA
+         5              MTECH                  ELIZABATH
+
+
+
+
+

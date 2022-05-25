@@ -1,0 +1,198 @@
+
+s
+
+
+
+SQL> create table saillor(sid int,sname varchar(20),rating int,age int);
+
+Table created.
+
+
+
+SQL> insert into saillor values(22,'dustin',7,45);
+
+1 row created.
+
+SQL> insert into saillor values(29,'brutus',1,33);
+
+1 row created.
+
+SQL> alter table saillor alter column age float;
+alter table saillor alter column age float
+                    *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> alter table saillor alter column age float;
+alter table saillor alter column age float
+                    *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> alter table saillor drop column age;
+
+Table altered.
+
+SQL> alter table saillor add age float ;
+
+Table altered.
+
+SQL> select * from saillor;
+
+       SID SNAME                    RATING        AGE
+---------- -------------------- ---------- ----------
+        22 dustin                        7
+        29 brutus                        1
+
+SQL> drop table saillor;
+
+Table dropped.
+
+SQL> create table saillor(sid int,sname varchar(20),rating int,age float);
+
+Table created.
+
+SQL> insert into saillor values(22,'dustin',7,45);
+
+1 row created.
+
+SQL> insert into saillor values(29,'brutus',1,33);
+
+1 row created.
+
+SQL> insert into saillor values(31,'lubber',8,55.5);
+
+1 row created.
+
+SQL> insert into saillor values(32,'andy',8,25.5);
+
+1 row created.
+
+SQL> insert into saillor values(58,'rusty',10,35);
+
+1 row created.
+
+SQL> insert into saillor values(64,'horatio',7,35);
+
+1 row created.
+
+SQL> insert into saillor values(71,'zorba',10,16);
+
+1 row created.
+
+SQL> insert into saillor values(74,'horatio',7,35);
+
+1 row created.
+
+SQL> insert into saillor values(85,'art',3,25.5);
+
+1 row created.
+
+SQL> insert into saillor values(95,'bob',3,63.5);
+
+1 row created.
+
+SQL> create table boat(bid int primary key,bname varchar(20),color varchar(20));
+
+
+Table created.
+
+SQL> alter table saillor add primary key(sid);
+
+Table altered.
+
+SQL> insert into boat values(1,'interlake','blue');
+
+1 row created.
+
+SQL> insert into boat values(2,'interlake','red');
+
+1 row created.
+
+SQL> insert into boat values(3,'clipper','green');
+
+1 row created.
+
+SQL> insert into boat values(4,'marine','red');
+
+1 row created.
+
+SQL> select * from saillor;
+
+       SID SNAME                    RATING        AGE
+---------- -------------------- ---------- ----------
+        22 dustin                        7         45
+        29 brutus                        1         33
+        31 lubber                        8       55.5
+        32 andy                          8       25.5
+        58 rusty                        10         35
+        64 horatio                       7         35
+        71 zorba                        10         16
+        74 horatio                       7         35
+        85 art                           3       25.5
+        95 bob                           3       63.5
+
+10 rows selected.
+
+SQL> select * from boat;
+
+       BID BNAME                COLOR
+---------- -------------------- --------------------
+         1 interlake            blue
+         2 interlake            red
+         3 clipper              green
+         4 marine               red
+
+SQL> create table reserves(sid int fo
+  2
+SQL> create table reserves(sid int,bid int,date date,foreign key(sid) references
+ saillor(sid),foreign key(sid) references boat(bid);
+create table reserves(sid int,bid int,date date,foreign key(sid) references sail
+lor(sid),foreign key(sid) references boat(bid)
+                                      *
+ERROR at line 1:
+ORA-00904: : invalid identifier
+
+
+SQL> create table reserves(sid int,bid int,date date,foreign key(sid) references
+ saillor(sid),foreign key(sid) references boat(bid));
+create table reserves(sid int,bid int,date date,foreign key(sid) references sail
+lor(sid),foreign key(sid) references boat(bid))
+                                      *
+ERROR at line 1:
+ORA-00904: : invalid identifier
+
+
+SQL> create table reserves(sid int,bid int,day date,foreign key(sid) references
+saillor(sid),foreign key(sid) references boat(bid));
+create table reserves(sid int,bid int,day date,foreign key(sid) references saill
+or(sid),foreign key(sid) references boat(bid))
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> create table reserves(sid int,bid int,day date);
+create table reserves(sid int,bid int,day date)
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> drop table reserves
+  2  ;
+
+Table dropped.
+
+SQL> create table reserves(sid int,bid int,day date,foreign key(sid) references
+saillor(sid),foreign key(sid) references boat(bid));
+
+Table created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL>

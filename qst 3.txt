@@ -1,0 +1,65 @@
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> create user hashir identified by hash;
+
+User created.
+
+
+
+SQL> select * from dept;
+
+no rows selected
+
+SQL> insert into dept values(1,'EEE','BIJU');
+
+1 row created.
+
+SQL> insert into dept values(2,'CSE','MANU');
+
+1 row created.
+
+SQL> insert into dept values(3,'MCA','SIBU');
+
+1 row created.
+
+SQL> insert into dept values(4,'CIVIL','SONIA');
+
+1 row created.
+
+SQL> grant all on dept to hashir;
+
+Grant succeeded.
+
+SQL> grant create session to hashir;
+
+Grant succeeded.
+
+SQL> connect hashir
+Enter password:
+Connected.
+
+SQL> select * from system.dept;
+
+   DEPT_ID DEPT_NAME            HEAD_DEPT
+---------- -------------------- --------------------
+         1 EEE                  BIJU
+         2 CSE                  MANU
+         3 MCA                  SIBU
+         4 CIVIL                SONIA
+
+
+SQL> connect system
+Enter password:
+Connected.
+
+SQL> revoke all on dept from hashir;
+
+Revoke succeeded.
+
+SQL> commit;
+
+Commit complete.
+
+SQL>

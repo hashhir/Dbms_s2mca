@@ -1,0 +1,129 @@
+
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Gmail with screen readers
+Meet
+New meeting
+Join a meeting
+Hangouts
+
+1 of 138
+lab 7
+Inbox
+
+Jubitha C M
+Attachments
+2:34 PM (0 minutes ago)
+to me
+
+
+Attachments area
+SQL> create table students(id int,sname varchar(10),mark int);
+
+Table created.
+
+SQL> insert into students(1,'sanjay',64);
+insert into students(1,'sanjay',64)
+                     *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into students values(1,'sanjay',64);
+
+1 row created.
+
+SQL> insert into students values(2,'Varun',72);
+
+1 row created.
+
+SQL> insert into students values(3,'Akash',45);
+
+1 row created.
+
+SQL> insert into students values(4,'Rohit',86);
+
+1 row created.
+
+SQL> insert into students values(5,'Anjali',92);
+
+1 row created.
+
+SQL> insert into students values(6,'Ammu',95);
+
+1 row created.
+
+SQL> insert into students values(7,'Rahul',80);
+
+1 row created.
+
+SQL> insert into students values(8,'Prathiba',62;
+insert into students values(8,'Prathiba',62
+                                          *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> insert into students values(8,'Prathiba',62);
+
+1 row created.
+
+SQL> insert into students values(8,'Ravi',75);
+
+1 row created.
+
+SQL> insert into students values(9,'Pulkit',76);
+
+1 row created.
+
+SQL> select *from students;
+
+        ID SNAME            MARK
+---------- ---------- ----------
+         1 sanjay             64
+         2 Varun              72
+         3 Akash              45
+         4 Rohit              86
+         5 Anjali             92
+         6 Ammu               95
+         7 Rahul              80
+         8 Prathiba           62
+         8 Ravi               75
+         9 Pulkit             76
+
+10 rows selected.
+
+SQL> select count(sname) from students where mark>75;
+
+COUNT(SNAME)
+------------
+           5
+
+SQL> select avg(mark) from students;
+
+ AVG(MARK)
+----------
+      74.7
+
+SQL> select min(mark) from students;
+
+ MIN(MARK)
+----------
+        45
+
+SQL> select max(mark) from students;
+
+ MAX(MARK)
+----------
+        95
+
+SQL> commit;
+
+Commit complete.
+
+SQL>
+
+
+lab7.txt
+Displaying lab7.txt.

@@ -1,0 +1,50 @@
+.
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> select * from dept;
+
+   DEPT_ID DEPT_NAME            HEAD_DEPT
+---------- -------------------- --------------------
+         1 EEE                  BIJU
+         2 CSE                  MANU
+         3 MCA                  SIBU
+         4 CIVIL                SONIA
+
+SQL> savepoint s1;
+
+Savepoint created.
+
+SQL> insert into dept values(5,'mtech','nisha');
+
+1 row created.
+
+SQL> select * from dept;
+
+   DEPT_ID DEPT_NAME            HEAD_DEPT
+---------- -------------------- --------------------
+         1 EEE                  BIJU
+         2 CSE                  MANU
+         3 MCA                  SIBU
+         4 CIVIL                SONIA
+         5 mtech                nisha
+
+SQL> rollback to savepoint s1;
+
+Rollback complete.
+
+SQL> select * from dept;
+
+   DEPT_ID DEPT_NAME            HEAD_DEPT
+---------- -------------------- --------------------
+         1 EEE                  BIJU
+         2 CSE                  MANU
+         3 MCA                  SIBU
+         4 CIVIL                SONIA
+
+SQL> commit;
+
+Commit complete.
+
+SQL>

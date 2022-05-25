@@ -1,0 +1,77 @@
+
+> use employee
+switched to db employee
+> db.emp.insertMany([{ename:"hashir",dept:"sales",salary:50000},{ename:"jubitha",dept:"manager",salary:10000},{enam
+e:"joel",dept:"accounting",salary:80000},{ename:"jocop",dept:"sales",salary:70000},{ename:"muhsina",dept:"staff",sa
+lary:10000},{ename:"nandu",dept:"sales",salary:50000},{ename:"fasil",dept:"accounting",salary:50000},{ename:"gokul"
+,dept:"sales",salary:50000},{ename:"sukrith",dept:"staff",salary:50000}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62833bb37914d7feb512e0c2"),
+                ObjectId("62833bb37914d7feb512e0c3"),
+                ObjectId("62833bb37914d7feb512e0c4"),
+                ObjectId("62833bb37914d7feb512e0c5"),
+                ObjectId("62833bb37914d7feb512e0c6"),
+                ObjectId("62833bb37914d7feb512e0c7"),
+                ObjectId("62833bb37914d7feb512e0c8"),
+                ObjectId("62833bb37914d7feb512e0c9"),
+                ObjectId("62833bb37914d7feb512e0ca")
+        ]
+}
+> db.emp.find().pretty()
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0c2"),
+        "ename" : "hashir",
+        "dept" : "sales",
+        "salary" : 50000
+}
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0c3"),
+        "ename" : "jubitha",
+        "dept" : "manager",
+        "salary" : 10000
+}
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0c4"),
+        "ename" : "joel",
+        "dept" : "accounting",
+        "salary" : 80000
+}
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0c5"),
+        "ename" : "jocop",
+        "dept" : "sales",
+        "salary" : 70000
+}
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0c6"),
+        "ename" : "muhsina",
+        "dept" : "staff",
+        "salary" : 10000
+}
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0c7"),
+        "ename" : "nandu",
+        "dept" : "sales",
+        "salary" : 50000
+}
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0c8"),
+        "ename" : "fasil",
+        "dept" : "accounting",
+        "salary" : 50000
+}
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0c9"),
+        "ename" : "gokul",
+        "dept" : "sales",
+        "salary" : 50000
+}
+{
+        "_id" : ObjectId("62833bb37914d7feb512e0ca"),
+        "ename" : "sukrith",
+        "dept" : "staff",
+        "salary" : 50000
+}
+>
