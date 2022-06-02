@@ -1,0 +1,101 @@
+> use movie
+switched to db movie
+> db.moviedetails.insert({title:"jurassicpark",writer:"abc",year:2002,actors:"x
+z"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"jurassicworld",writer:"ab2",year:2002,actors:"
+imsim"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"j3",writer:"ab3",year:2003,actors:"lalala"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"j4",writer:"ab4",year:2007,actors:"hehehhe"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"j5",writer:"ab5",year:2007,actors:"hcn1"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"j6",writer:"ab6",year:2008,actors:"hcn1"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"j7",writer:"ab7",year:2005,actors:"hcn2"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"j8",writer:"ab8",year:2003,actors:"hcn1"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"j9",writer:"ab9",year:2004,actors:"lalala"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({title:"j10",writer:"ab10",year:2010,actors:"lalala"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.find().pretty()
+{
+        "_id" : ObjectId("628c55ddab24afd1527a20a1"),
+        "title" : "jurassicpark",
+        "writer" : "abc",
+        "year" : 2002,
+        "actors" : "xyz"
+}
+{
+        "_id" : ObjectId("628c561cab24afd1527a20a2"),
+        "title" : "jurassicworld",
+        "writer" : "ab2",
+        "year" : 2002,
+        "actors" : "simsim"
+}
+{
+        "_id" : ObjectId("628c565eab24afd1527a20a3"),
+        "title" : "j3",
+        "writer" : "ab3",
+        "year" : 2003,
+        "actors" : "lalala"
+}
+{
+        "_id" : ObjectId("628c567dab24afd1527a20a4"),
+        "title" : "j4",
+        "writer" : "ab4",
+        "year" : 2007,
+        "actors" : "hehehhe"
+}
+{
+        "_id" : ObjectId("628c5696ab24afd1527a20a5"),
+        "title" : "j5",
+        "writer" : "ab5",
+        "year" : 2007,
+        "actors" : "hcn1"
+}
+{
+        "_id" : ObjectId("628c56b5ab24afd1527a20a6"),
+        "title" : "j6",
+        "writer" : "ab6",
+        "year" : 2008,
+        "actors" : "hcn1"
+}
+{
+        "_id" : ObjectId("628c56c7ab24afd1527a20a7"),
+        "title" : "j7",
+        "writer" : "ab7",
+        "year" : 2005,
+        "actors" : "hcn2"
+}
+{
+        "_id" : ObjectId("628c56e3ab24afd1527a20a8"),
+        "title" : "j8",
+        "writer" : "ab8",
+        "year" : 2003,
+        "actors" : "hcn1"
+}
+{
+        "_id" : ObjectId("628c56f7ab24afd1527a20a9"),
+        "title" : "j9",
+        "writer" : "ab9",
+        "year" : 2004,
+        "actors" : "lalala"
+}
+{
+        "_id" : ObjectId("628c5713ab24afd1527a20aa"),
+        "title" : "j10",
+        "writer" : "ab10",
+        "year" : 2010,
+        "actors" : "lalala"
+}
+>
+> db.moviedetails.update({title:"j7"},{$set:{title:"invisible"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.moviedetails.remove({title:"j6"})
+WriteResult({ "nRemoved" : 1 })
