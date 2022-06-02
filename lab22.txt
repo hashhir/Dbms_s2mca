@@ -1,0 +1,39 @@
+
+> db.createUser({user:"hashir",pwd:"2727",roles:[{role:"userAdminAnyDatabase",db:"admin"}]})
+Successfully added user: {
+        "user" : "hashir",
+        "roles" : [
+                {
+                        "role" : "userAdminAnyDatabase",
+                        "db" : "admin"
+                }
+        ]
+}
+
+> db.createUser({user:"hashh",pwd:"2727",roles:[{role:"read",db:"movie"},{role:"readWrite",db:"emplo
+yee"}]})
+Successfully added user: {
+        "user" : "hashh",
+        "roles" : [
+                {
+                        "role" : "read",
+                        "db" : "movie"
+                },
+                {
+                        "role" : "readWrite",
+                        "db" : "employee"
+                }
+        ]
+}
+
+> db.createUser({user:"hashmohd",pwd:"2727",roles:[{role:"userAdmin",db:"admin"}]})
+Successfully added user: {
+        "user" : "hashmohd",
+        "roles" : [
+                {
+                        "role" : "userAdmin",
+                        "db" : "admin"
+                }
+        ]
+}
+>
